@@ -1,1 +1,9 @@
-{}
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 20508,
+  "expoServerNgrokUrl": "https://t4-uf5.anonymous.projet-dev-mobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.t4-uf5.anonymous.projet-dev-mobile.exp.direct",
+  "ngrokPid": 6688
+}
