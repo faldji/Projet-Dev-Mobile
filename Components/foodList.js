@@ -1,5 +1,5 @@
 
-export const oodList = [
+export const FoodList = [
     {
       id: 1,
       name: 'Couscous Tajine',
