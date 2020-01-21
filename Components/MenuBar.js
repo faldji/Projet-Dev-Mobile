@@ -67,13 +67,12 @@ const propsType = {
     onRightElementPress: PropTypes.func,
 };
 const defaultProps = {
-    back: false,
     onRightElementPress: null,
     rightElement: null,
     centerElement: Constants.manifest.name,
     leftElement: null,
     onLeftElementPress: null,
-    size: 24,
+    size: 28,
 };
 
 function getStyles() {

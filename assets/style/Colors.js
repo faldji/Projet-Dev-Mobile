@@ -5,12 +5,14 @@ export const Palette=  {
         light: "#2196f3",
         main: "#3f51b5",
         dark: "#303f9f",
-        contrastText: "#fff"
+        other:"#ffebee",
+        contrastText: "#fff",
     },
     secondary: {
         light: "#ff4081",
         main: "#f50057",
         dark: "#c51162",
+        other: "#801313",
         contrastText: "#fff",
     },
     error: {
