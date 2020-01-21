@@ -28,107 +28,25 @@ export const fontWeight = {
     light: '300',
     normal: '400',
     medium: '500',
+    bold: '800',
 };
 export const spacing={
-    actionButtonSize: 56,
-    iconSize: 24,
-    avatarSize: 40,
+    iconSize: 50,
 };
 export const Styles = {
     Palette,
-    actionButton: StyleSheet.create({
-        positionContainer: {
-            position: 'absolute',
-            bottom: 20,
-            right: 20,
-        },
-        container: {
-            height: spacing.actionButtonSize,
-            width: spacing.actionButtonSize,
-            borderRadius: spacing.actionButtonSize / 2,
-            backgroundColor: Palette.secondary.main,
-        },
-        overlayContainer: {
-            ...StyleSheet.absoluteFillObject,
-            backgroundColor: 'rgba(255,255,255,0.8)',
-            // we need overlay to be above the toolbar - so maybe we could use some variable
-            // to get elevation for toolbar and this overlay
-            ...getPlatformElevation(4),
-        },
-        toolbarPositionContainer: {
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            left: 0,
-        },
-        toolbarContainer: {
-            flex: 1,
-            height: spacing.actionButtonSize,
-            backgroundColor: Palette.secondary.main,
-            flexDirection: 'row',
-        },
-        toolbarActionContainer: {
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        speedDialContainer: {
-            alignItems: 'flex-end',
-        },
-        speedDialActionContainer: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingLeft: 8,
-        },
-        speedDialActionIconContainer: {
-            width: spacing.actionButtonSize,
-            height: spacing.actionButtonSize,
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        speedDialActionIcon: {
-            ...getPlatformElevation(2),
-            height: spacing.actionButtonSize - 16,
-            width: spacing.actionButtonSize - 16,
-            borderRadius: (spacing.actionButtonSize - 16) / 2,
-            backgroundColor: Palette.grey["500"],
-        },
-        speedDialActionLabel: {
-            color: Palette.secondary.contrastText,
-        },
-        speedDialActionLabelContainer: {
-            ...getPlatformElevation(2),
-            borderRadius: 2,
-            marginRight: 24,
-            paddingVertical: 2,
-            paddingHorizontal: 8,
-            backgroundColor: Palette.grey["100"],
-        },
-        icon: {
-            color: Palette.white,
-        },
-    }),
     badge: StyleSheet.create({
         container: {
             position: 'absolute',
             top: -8 ,
-            left: spacing.iconSize - 5,
-            width: 16,
-            height: 16,
-            borderRadius: 8,
+            left: spacing.iconSize /2,
+            width: 18,
+            height: 18,
+            borderRadius: 9,
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: Palette.secondary.main,
 
-        },
-        strokeContainer: {
-            position: 'absolute',
-            width: 16,
-            height: 16,
-            borderRadius: 8,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: Palette.white,
         },
         content: {
             color: Palette.white,
@@ -149,33 +67,27 @@ export const Styles = {
     }),
     button: StyleSheet.create({
         container: {
-            height: 36,
+            padding: 10,
+            margin:5,
             alignItems: 'center',
             justifyContent: 'center',
-            paddingHorizontal: 16,
+            paddingHorizontal: 20,
             borderRadius: 2,
             flexDirection: 'row',
+            backgroundColor:Palette.primary.main
         },
         text: {
             color: Palette.black,
             fontWeight: fontWeight.medium,
-            fontSize: 14,},
+            fontSize: 20,
+            padding:5,
+        },
+
         icon: {
             marginRight: 8,
         },
     }),
     buttonDisabled: StyleSheet.create({
-        text: {
-            color: Palette.text.disabled,
-        },
-    }),
-    buttonRaised: StyleSheet.create({
-        container: {
-            backgroundColor: '#fff',
-            borderColor: 'rgba(0,0,0,0.12)',
-        },
-    }),
-    buttonRaisedDisabled: StyleSheet.create({
         container: {
             backgroundColor: 'rgba(0,0,0,0.12)',
         },
@@ -200,7 +112,7 @@ export const Styles = {
             alignItems: 'center',
         },
         icon: {
-            color: Palette.primary.main,
+            color: Palette.secondary.other,
         },
         label: {
             color: Palette.black,
@@ -208,16 +120,11 @@ export const Styles = {
             flex: 1,
         },
     }),
-    divider: StyleSheet.create({
-        container: {
-            backgroundColor: 'rgba(0,0,0,0.12)',
-            height: StyleSheet.hairlineWidth,
-        },
-    }),
     listItem: StyleSheet.create({
         container: {
-            backgroundColor: Palette.white,
-            height: 56,
+            backgroundColor:'rgba(255, 255, 220, 0.2)',
+            height: 132,
+            marginBottom:20,
         },
         contentViewContainer: {
             flex: 1,
@@ -225,18 +132,35 @@ export const Styles = {
             alignItems: 'center',
         },
         leftElementContainer: {
-            width: 56,
-            marginLeft: 16,
+            width: 120,
+            margin: 10,
         },
         centerElementContainer: {
             flex: 1,
         },
-        textViewContainer: {},
+        image:{
+            width:120,
+            height:120,
+            borderRadius:60,
+        },
+        textViewContainer: {
+        },
+        TotalPriceContainer:{
+            margin:20,
+            borderRadius:5,
+            flexDirection:'row-reverse'
+        },
+        TotalPriceText:{
+            color: Palette.primary.main,
+            fontWeight: fontWeight.bold,
+            fontSize: 22,
+            padding:10,
+            margin :5
+        },
         primaryText: {
-            lineHeight: 24,
             color: Palette.text.primary,
             fontWeight: fontWeight.normal,
-            fontSize: 16,
+            fontSize: 20,
         },
         firstLine: {
             flexDirection: 'row',
@@ -247,44 +171,49 @@ export const Styles = {
         secondaryText: {
             color: Palette.text.secondary,
             fontWeight: fontWeight.normal,
-            fontSize: 14,
-            lineHeight: 20,
+            fontSize: 16,
         },
         tertiaryText: {
             color: Palette.text.secondary,
             fontWeight: fontWeight.normal,
             fontSize: 14,
-            lineHeight: 20,
         },
         rightElementContainer: {
-            paddingRight: 4,
-            flexDirection: 'row',
             backgroundColor: 'transparent',
+            justifyContent:'center',
+            alignItems:'center',
+            flexDirection:'row'
         },
         leftElement: {
-            margin: 16,
+            margin: 20,
             color: Palette.text.secondary,
         },
         rightElement: {
-            color: Palette.text.secondary,
+            backgroundColor: Palette.secondary.main,
+            borderRadius:10,
+            color:Palette.white,
+            fontWeight:fontWeight.normal,
+            paddingLeft:15,
+            paddingRight:15,
+            alignSelf:'center',
+            fontSize:20
         },
     }),
     subheader:StyleSheet.create({
         container: {
-            height: 48,
+            height: 64,
             justifyContent: 'center',
         },
         text: {
             color: Palette.text.secondary,
-            fontWeight: fontWeight.medium,
-            fontSize: 14,
-            lineHeight: 24,
+            fontWeight: fontWeight.normal,
+            fontSize: 32,
         },
     }),
     toolbar: StyleSheet.create({
         container: {
-            backgroundColor: Palette.primary.light,
-            height: 56,
+            backgroundColor: Palette.primary.other,
+            height: 80,
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 4,
@@ -295,14 +224,14 @@ export const Styles = {
             backgroundColor: 'transparent',
         },
         leftElement: {
-            color: Palette.white,
+            color: Palette.black,
         },
         centerElementContainer: {
             flex: 1,
             marginLeft: 20,
         },
         titleText: {
-            color: Palette.white,
+            color: Palette.black,
             fontWeight: fontWeight.medium,
             fontSize: 20,
             marginLeft: 16,
@@ -312,24 +241,36 @@ export const Styles = {
             backgroundColor: 'transparent',
         },
         rightElement: {
-            color: Palette.white,
+            color: Palette.black,
         },
     }),
     fontFamily: 'Roboto',
     container: {
         flex: 1
     },
-    row: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-
-    welcome: {
+    inputForm: StyleSheet.create({
+        container: {
+            paddingHorizontal: 25,
+        },
+        spacedRow: {
+            flexDirection:'row',
+            alignItems:'center',
+            justifyContent:'center'
+        },
+        contentText:{
+            textAlign:'center',
+            fontSize: 20,
+            height:32,
+            margin: 10,
+            color:Palette.black,
+            borderBottomWidth:1,
+        }
+    }),
+    centerText: {
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
+        color:Palette.black
     },
     instructions: {
         textAlign: 'center',

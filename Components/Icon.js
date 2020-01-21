@@ -14,7 +14,8 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {spacing, Styles} from "../assets/style/Styles";
-import {Text, View} from "react-native";
+import {Alert, Text, View} from "react-native";
+import {withPanierContext} from "../routes/PanierProvider";
 
 const propTypes = {
     isBadge: PropTypes.bool,
@@ -26,6 +27,10 @@ const propTypes = {
      * Name of Icon set that should be use. From react-native-vector-icons
      */
     iconSet: PropTypes.string,
+    /**
+     * banner
+     */
+    banner: PropTypes.any,
 };
 const defaultProps = {
     isBadge:false,
@@ -65,29 +70,21 @@ const getIconComponent = iconSet => {
 };
 
 class Icon extends PureComponent {
-    constructor(props,context) {
-        super(props,context);
-        const badgeValue = context.badge || 10;
-        this.state = {
-            badgeValue
-        }
-    }
     render() {
-        const { isBadge, name, style, size, color, iconSet } = this.props;
-       const {badgeValue} = this.state;
+        const { isBadge, name, style, size, color, iconSet, context} = this.props;
+       const badgeValue = context.banner || 0;
         const iconColor = color || Styles.Palette.text.secondary;
         const iconSize = size || spacing.iconSize;
         const VectorIcon = getIconComponent(iconSet);
         if (isBadge){
-            const showBadge = (badgeValue > 0 )
+            const showBadge = (badgeValue && badgeValue > 0 )
                 ?
                 <View style={Styles.badge.container}>
                     <Text style={Styles.badge.content}>
                         {badgeValue < 10 ? badgeValue: '9+'}
                     </Text>
                 </View>
-                :
-                <VectorIcon iconSet={iconSet} name={name} color={color} size={iconSize} />;
+                :null;
             return (<View style={{flexDirection:'row'}}>
 
                 <VectorIcon iconSet={iconSet} name={name} color={color} size={iconSize} />
@@ -104,4 +101,4 @@ class Icon extends PureComponent {
 Icon.propTypes = propTypes;
 Icon.defaultProps = defaultProps;
 
-export default Icon;
+export default withPanierContext(Icon);
