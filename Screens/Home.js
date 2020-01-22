@@ -32,7 +32,7 @@ class Home extends React.Component {
                     data={FoodList} contentContainerStyle={{alignItems:'center'}} keyExtractor={item => item.id.toString()} numColumns={2} renderItem=
                     {({item}) =>
                         <TouchableItem  delayPressIn={50} onPress={()=>navigation.navigate('ItemDetails')}  key={item.id}>
-                            <View  style={{margin:12, alignItems:'center', justifyContent:'center'}}>
+                            <View  style={{margin:11, alignItems:'center', justifyContent:'center'}}>
 
                                 <ImageBackground style={{width :192 , height:256}} source={item.image}>
                                     <View style={{ paddingHorizontal:25, alignItems:'center', justifyContent:'center',flexDirection:'row', position:'absolute' , backgroundColor:"#336699"}}>
