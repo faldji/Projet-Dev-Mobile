@@ -115,6 +115,8 @@ class Checkbox extends PureComponent {
             {labelRend}
             </View>
         );
+        if (disabled)
+            return element;
         return <TouchableItem>{element}</TouchableItem>
     }
 }
