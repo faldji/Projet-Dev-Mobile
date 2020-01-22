@@ -1,32 +1,49 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import MenuBar from "../Components/MenuBar";
-import {Styles} from "../assets/style/Styles";
+import { Styles } from "../assets/style/Styles";
 
 class Success extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
-        const {navigation} = this.props;
-        return (
-            <View style={Styles.container}>
-                <MenuBar leftElement="menu" onLeftElementPress={() => navigation.toggleDrawer()}
-                         rightElement={"shopping-cart"} onRightElementPress={() => navigation.navigate('MyCart')}/>
-                <View>
-                    <ImageBackground style={{alignItems:'center', width :400 , height:300}} source={require('../assets/img/valid.png')}>
-                        <View style={{alignItems:'center', justifyContent:'center',flexDirection:'row'}}>
-                           <Text style ={{textAlign:'center', color:'#2E8B57', fontSize:22}}> Commande Envoyée </Text>
-                        </View>
-                    </ImageBackground>
-                <   View>
-                      <Text style ={{textAlign:'center', color:'#BDB76B', fontSize:21}}>Votre repas copieux vous sera livré dès la fin de votre cours.</Text>
-                    </View>
-                    <View>
-                      <Text style ={{textAlign:'center', color:'#556B2F'}}> Il vous reste 30 &euro; sur la carte crous</Text>
-                   </View>
-                </View>
-            </View>
+        const { navigation } = this.props;
+        return ( <
+            View style = { Styles.container } >
+            <
+            MenuBar leftElement = "menu"
+            onLeftElementPress = {
+                () => navigation.toggleDrawer() }
+            rightElement = { "shopping-cart" }
+            onRightElementPress = {
+                () => navigation.navigate('MyCart') }
+            /> <
+            View >
+            <
+            ImageBackground style = {
+                { alignItems: 'center', width: 400, height: 300 } }
+            source = { require('../assets/img/valid.png') } >
+            <
+            View style = {
+                { alignItems: 'center', justifyContent: 'center', flexDirection: 'row' } } >
+            <
+            Text style = {
+                { textAlign: 'center', color: '#2E8B57', fontSize: 22 } } > Commande Envoyée < /Text> <
+            /View> <
+            /ImageBackground> <
+            View >
+            <
+            Text style = {
+                { textAlign: 'center', color: '#BDB76B', fontSize: 21 } } > Votre repas vous sera livré dès la fin de votre cours. < /Text> <
+            /View> <
+            View >
+            <
+            Text style = {
+                { textAlign: 'center', color: '#556B2F' } } > Il vous reste 30 & euro; sur la carte crous < /Text> <
+            /View> <
+            /View> <
+            /View>
         );
     }
 }
