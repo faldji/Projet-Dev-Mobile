@@ -18,7 +18,8 @@
     },
     "icon": "assets/img/AppIcon.png",
     "androidStatusBar": {
-      "backgroundColor": "#1976d2"
+      "backgroundColor": "#ffebee",
+      "barStyle": "dark-content"
     }
   }
 }
