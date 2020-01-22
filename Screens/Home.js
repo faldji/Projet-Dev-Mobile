@@ -31,7 +31,7 @@ class Home extends React.Component {
                 <FlatList
                     data={FoodList} contentContainerStyle={{alignItems:'center'}} keyExtractor={item => item.id.toString()} numColumns={2} renderItem=
                     {({item}) =>
-                        <TouchableItem  delayPressIn={50} onPress={()=>navigation.navigate('ItemDetails')}  key={item.id}>
+                        <TouchableItem  delayPressIn={50} onPress={()=>navigation.navigate('ItemDetails', { key: item.id })}  key={item.id}>
                             <View  style={{margin:11, alignItems:'center', justifyContent:'center'}}>
 
                                 <ImageBackground style={{width :192 , height:256}} source={item.image}>
