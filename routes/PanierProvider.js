@@ -37,8 +37,8 @@ class PanierProvider extends Component {
             updatePanier:(myCart,redirect,navigation) => this.updatePanier(myCart,redirect,navigation)
         };
     }
-    componentDidMount() {
-       AsyncStorage.getItem('@MyCart:key',(error,result)=>{
+    componentDidMount = async () =>{
+       await AsyncStorage.getItem('@MyCart:key',(error,result)=>{
             if (!error){
                 if (result !== null){
                     let myCart = JSON.parse(result);
@@ -53,7 +53,7 @@ class PanierProvider extends Component {
             }
 
         });
-    };
+    }
     updatePanier = async (myCart,redirect,navigation)=>{
         let tot = 0;
         myCart.forEach(value => tot += value.price);
