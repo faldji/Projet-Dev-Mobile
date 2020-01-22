@@ -3,16 +3,21 @@
   "displayName": "Delivecrous",
   "expo": {
     "name": "ProjetCompDevMob",
-    "slug": "expo-template-bare",
+    "slug": "Projet-Compilation-Dev-Mobile",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "version": "1.0.0",
     "entryPoint": "node_modules/expo/AppEntry.js",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
+    "android": {
+      "package": "tnsi.istv.uphf"
+    },
+    "ios": {
+      "bundleIdentifier": "tnsi.istv.uphf"
+    },
     "splash": {
       "image": "assets/img/splash.png"
     },

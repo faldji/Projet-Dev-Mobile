@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 17084,
-  "expoServerNgrokUrl": "https://uu-kvp.faldji.projetcompdevmob.exp.direct",
-  "packagerNgrokUrl": "https://packager.uu-kvp.faldji.projetcompdevmob.exp.direct",
-  "ngrokPid": 17118
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
