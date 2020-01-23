@@ -55,8 +55,7 @@ class Home extends React.Component {
                     data={foodList} contentContainerStyle={{alignItems:'center'}} keyExtractor={item => item.item.id.toString()} numColumns={2} renderItem=
                     {({item}) =>
                         <TouchableItem  delayPressIn={50} onPress={()=>navigation.navigate('ItemDetails', { key: item.item.id })}  key={item.id}>
-                            <View  style={{margin:11, alignItems:'center', justifyContent:'center'}}>
-
+                            <View  style={{margin:5, alignItems:'center', justifyContent:'center'}}>
                                 <ImageBackground style={{width :192 , height:256}} source={item.item.image}>
                                     <View style={{ paddingHorizontal:25, alignItems:'center', justifyContent:'center',flexDirection:'row', position:'absolute' , backgroundColor:"#336699"}}>
                                         <Text style={{color:'#fff', fontSize:24}}>{item.item.price} &euro;</Text>

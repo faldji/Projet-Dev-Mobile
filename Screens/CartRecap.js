@@ -83,7 +83,7 @@ class CartRecap extends Component {
                                                                         item: item
                                                                     },
                                                                 }}
-                                                                onPress={() => navigation.navigate('ItemDetails')}/>}
+                                                                onPress={()=>navigation.navigate('ItemDetails', { key: item.id })}/>}
                               keyExtractor={item => item.id.toString()}/>
                     <View style={styles.listItem.TotalPriceContainer}>
                         <Text style={styles.listItem.TotalPriceText}>
